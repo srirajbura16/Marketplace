@@ -4,8 +4,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //Config
+require('./config/db');
 
 //Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //Router
 app.get('/', (req, res) => {
