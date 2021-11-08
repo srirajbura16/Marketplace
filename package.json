@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/srirajbura16/Marketplace#readme",
   "dependencies": {
+    "async": "^3.2.2",
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
