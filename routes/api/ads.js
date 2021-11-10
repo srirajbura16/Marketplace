@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const adsController = require('../../controllers/adsController');
+
 router.get('/', adsController.get_ads);
 router.post('/', adsController.create_ad);
 
