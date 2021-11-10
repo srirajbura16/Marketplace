@@ -1,0 +1,19 @@
+@hostname = http://localhost:5000/api/ads
+
+GET {{hostname}}
+Content-Type: application/json
+###
+
+GET {{hostname}}/618bf886dd33148d8c31a628
+Content-Type: application/json
+###
+
+
+POST {{hostname}}
+Content-Type: application/json
+
+{
+  "title": "Specialized Crossroads",
+  "description": "New Bike",
+  "condition": "New"
+}

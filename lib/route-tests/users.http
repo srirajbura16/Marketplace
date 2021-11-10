@@ -1,0 +1,16 @@
+@hostname = http://localhost:5000/api/users
+
+
+GET {{hostname}}/618bfa2f9f0608f56116ff9f
+Content-Type: application/json
+###
+
+
+POST {{hostname}}
+Content-Type: application/json
+
+{
+  "name": "Todd Banks",
+  "email": "ttt@ksdfn.com",
+  "password": "new"
+}

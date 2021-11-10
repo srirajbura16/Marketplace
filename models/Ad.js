@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const AdSchema = new Schema(
   {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-    },
     title: {
       type: String,
       required: true,
@@ -28,4 +24,4 @@ const AdSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model('Ad', UserSchema);
+module.exports = mongoose.model('Ad', AdSchema);
