@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-exports.get_user = [
+exports.register = [
   // Authenticate
   // validation,
   // Extract error,

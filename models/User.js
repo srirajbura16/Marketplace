@@ -15,12 +15,12 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
-    // ads: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Ad',
-    //   },
-    // ],
+    ads: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Ad',
+      },
+    ],
   },
   {
     timestamps: true,
