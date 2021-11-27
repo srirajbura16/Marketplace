@@ -1,19 +1,15 @@
 const User = require('../models/User');
 
-exports.get_user = [
-  // Authenticate
-  // validation,
-  // Extract error,
-  // Create Ad
-  (req, res, next) => {
-    const newUser = new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    });
+exports.get_user = (req, res, next) => {
+  //getuser
+  //all posts by user (async.parallel)
 
-    newUser.save().then((user) => {
-      res.json(user);
-    });
-  },
-];
+  const { user_id } = req.params;
+  User.findById(user_id).exec((err, user) => {
+    if (err) {
+      return next(err);
+    }
+
+    res.json(user);
+  });
+};

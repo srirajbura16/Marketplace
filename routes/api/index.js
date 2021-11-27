@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/ads', require('./ads'));
+router.use('/auth', require('./auth'));
 router.use('/users', require('./users'));
 
 module.exports = router;

@@ -1,7 +1,6 @@
 const User = require('../models/User');
 
 exports.register = [
-  // Authenticate
   // validation,
   // Extract error,
   // Create Ad
@@ -16,4 +15,10 @@ exports.register = [
       res.json(user);
     });
   },
+];
+
+exports.login = [
+  //validate,
+  //Extract errors,
+  //Log in User
 ];

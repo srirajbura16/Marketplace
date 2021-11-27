@@ -30,9 +30,9 @@ exports.create_ad = [
 
 exports.get_ad = (req, res, next) => {
   const id = req.params.id;
-  Ad.findOne({ id }).exec((err, ad) => {
+  Ad.findById(id).exec((err, ad) => {
     if (err) {
-      return next(err);
+      next(err);
     }
 
     res.json(ad);
