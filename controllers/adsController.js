@@ -6,7 +6,7 @@ exports.get_ads = (req, res, next) => {
       return next(err);
     }
 
-    res.json(ads);
+    res.status(200).json(ads);
   });
 };
 
