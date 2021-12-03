@@ -5,15 +5,16 @@ POST {{hostname}}/register
 Content-Type: application/json
 
 {
-  "name": "Todd Banks",
+  "username": "Banks",
   "email": "ttt@ksdfn.com",
   "password": "new"
 }
 
 
-POST {{hostname}}/login
-Content-Type: application/json
+# POST {{hostname}}/login
+# Content-Type: application/json
 
-{
+# {
 
-}
+# }
+
