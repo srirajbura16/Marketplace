@@ -10,6 +10,7 @@ Content-Type: application/json
   "password": "new"
 }
 
+###
 
 POST {{hostname}}/login
 Content-Type: application/json
@@ -17,6 +18,5 @@ Content-Type: application/json
 {
     "username": "Banks",
     "password": "new"
-
 }
 
