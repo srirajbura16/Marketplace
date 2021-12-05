@@ -11,10 +11,12 @@ Content-Type: application/json
 }
 
 
-# POST {{hostname}}/login
-# Content-Type: application/json
+POST {{hostname}}/login
+Content-Type: application/json
 
-# {
+{
+    "username": "Banks",
+    "password": "new"
 
-# }
+}
 
