@@ -6,7 +6,9 @@ const adsController = require('../../controllers/adsController');
 router.get('/', adsController.get_ads);
 router.post('/', adsController.create_ad);
 
-router.get('/:ad_id', adsController.get_ad);
+router.get('/:id', adsController.get_ad);
+
+//check auth
 // router.patch('/:id', adsController.update_ad);
 // router.delete('/:id', adsController.delete_ad);
 

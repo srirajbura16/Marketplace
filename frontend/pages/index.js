@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Ads from '../components/Ads/Ads';
 
-export default function Home({ ads }) {
+export default function Home({ data: ads }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +14,7 @@ export default function Home({ ads }) {
 
       <main className={styles.main}>
         All Ad listings
-        {/* <Ads ads={ads} /> */}
+        <Ads ads={ads} />
       </main>
 
       <footer className={styles.footer}>
@@ -31,4 +31,19 @@ export default function Home({ ads }) {
       </footer>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const res = await fetch(`http://localhost:5000/api/ads`);
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { data },
+  };
 }
