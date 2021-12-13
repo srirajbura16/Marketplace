@@ -62,10 +62,10 @@ exports.login = async (req, res, next) => {
             // res.cookie('token', token, {
             //   httpOnly: true,
             // });
-            res.json({
-              success: true,
-              token: token,
-            });
+            // res.json({
+            //   success: true,
+            //   token: token,
+            // });
           }
         );
       } else {
