@@ -2,6 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import jwt from 'jsonwebtoken';
 
 export default function Login() {
@@ -19,13 +20,11 @@ export default function Login() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password }),
+      credentials: 'include',
     });
 
     const data = await res.json();
-
-    if (data) {
-      console.log(data);
-    }
+    console.log(data);
 
     const token = data.token;
     if (token) {
@@ -40,6 +39,9 @@ export default function Login() {
   return (
     <div>
       <h1>{message}</h1>
+      <div className="">
+        Not a user? <Link href="/register">Register</Link>
+      </div>
       <form onSubmit={submitForm}>
         <input
           type="text"

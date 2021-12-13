@@ -6,7 +6,6 @@ export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState("you're not logged in");
   const router = useRouter();
   console.log(username, email, password);
 
@@ -24,7 +23,6 @@ export default function Register() {
   }
   return (
     <div>
-      <h1>{message}</h1>
       <form onSubmit={submitForm}>
         <input
           type="text"

@@ -59,9 +59,11 @@ exports.login = async (req, res, next) => {
             if (err) {
               next(err);
             }
+            // res.cookie('token', token, {
+            //   httpOnly: true,
+            // });
             res.json({
               success: true,
-              // token: 'Bearer ' + token,
               token: token,
             });
           }
