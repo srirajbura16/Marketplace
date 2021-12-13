@@ -1,3 +1,3 @@
 # Intro
 
-Marketplace is a online space where people can sell used items.
+Marketplace is an online space where people can sell used items.
