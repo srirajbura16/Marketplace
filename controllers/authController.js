@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 
 // signup_validation,
-exports.register = (req, res, next) => {
+exports.register = async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -30,14 +30,14 @@ exports.register = (req, res, next) => {
   });
 };
 
-exports.login = (req, res) => {
+exports.login = async (req, res, next) => {
   //validate,
   //Extract errors,
   //Log in User
 
   const { username, password } = req.body;
 
-  User.findOne({ username }).then((user) => {
+  await User.findOne({ username }).then((user) => {
     if (!user) {
       return res.status(404).json({ username: 'This user does not exist' });
     }
@@ -56,9 +56,13 @@ exports.login = (req, res) => {
           secretOrKey,
           // { expiresIn: 3600 },
           (err, token) => {
+            if (err) {
+              next(err);
+            }
             res.json({
               success: true,
-              token: 'Bearer ' + token,
+              // token: 'Bearer ' + token,
+              token: token,
             });
           }
         );
