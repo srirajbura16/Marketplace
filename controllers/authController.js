@@ -44,30 +44,31 @@ exports.login = async (req, res, next) => {
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        const payload = {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-        };
-        const secretOrKey = process.env.JWT_SECRET;
-
-        jwt.sign(
-          payload,
-          secretOrKey,
-          // { expiresIn: 3600 },
-          (err, token) => {
-            if (err) {
-              next(err);
-            }
-            // res.cookie('token', token, {
-            //   httpOnly: true,
-            // });
-            res.json({
-              success: true,
-              token: token,
-            });
-          }
-        );
+        // const payload = {
+        //   id: user.id,
+        //   username: user.username,
+        //   email: user.email,
+        // };
+        // const secretOrKey = process.env.JWT_SECRET;
+        // jwt.sign(
+        //   payload,
+        //   secretOrKey,
+        //   // { expiresIn: 3600 },
+        //   (err, token) => {
+        //     if (err) {
+        //       next(err);
+        //     }
+        //     res.cookie('token', token, {
+        //       httpOnly: true,
+        //     });
+        //     res.json({
+        //       success: true,
+        //       token: token,
+        //     });
+        //   }
+        // );
+        const { password, ...data } = user._doc;
+        return res.json(data);
       } else {
         return res.status(400).json({ password: 'Incorrect password' });
       }
