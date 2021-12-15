@@ -1,3 +1,4 @@
+import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 const options = {
@@ -10,7 +11,6 @@ const options = {
       },
       async authorize(credentials) {
         //https://next-auth.js.org/configuration/providers/credentials
-        //fetch user here with credentials provided
         const url = 'http://localhost:5000/api/auth/login';
         const res = await fetch(url, {
           method: 'POST',
@@ -19,7 +19,7 @@ const options = {
         });
 
         const user = await res.json();
-
+        // console.log(user, 'hihihi');
         if (res.ok && user) {
           return user;
         }
@@ -28,9 +28,13 @@ const options = {
       },
     }),
   ],
+  secret: process.env.NEXT_AUTH_SECRET,
   session: {
-    jwt: true,
+    strategy: 'jwt',
+  },
+  jwt: {
+    secret: process.env.JWT_SECRET,
   },
 };
 
-export default options;
+export default NextAuth(options);

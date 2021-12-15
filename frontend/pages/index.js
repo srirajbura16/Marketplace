@@ -33,6 +33,21 @@
 //   );
 // }
 
+// export async function getServerSideProps(context) {
+//   const res = await fetch(`http://localhost:5000/api/ads`);
+//   const data = await res.json();
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: { data },
+//   };
+// }
+
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Home() {
@@ -52,18 +67,3 @@ export default function Home() {
     </>
   );
 }
-
-// export async function getServerSideProps(context) {
-//   const res = await fetch(`http://localhost:5000/api/ads`);
-//   const data = await res.json();
-
-//   if (!data) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-
-//   return {
-//     props: { data },
-//   };
-// }
