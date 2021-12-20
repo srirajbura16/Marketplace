@@ -10,7 +10,6 @@ const options = {
         password: { label: 'Password', type: 'text' },
       },
       async authorize(credentials) {
-        //https://next-auth.js.org/configuration/providers/credentials
         const url = 'http://localhost:5000/api/auth/login';
         const res = await fetch(url, {
           method: 'POST',
@@ -19,7 +18,6 @@ const options = {
         });
 
         const user = await res.json();
-        // console.log(user, 'hihihi');
         if (res.ok && user) {
           return user;
         }
