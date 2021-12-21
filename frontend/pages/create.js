@@ -1,6 +1,8 @@
 //check auth
 //reroute to login page in not authenticated
 import React, { useState } from 'react';
+import { Upload, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 export default function create() {
   return (
@@ -54,6 +56,13 @@ export default function create() {
             </select>
           </div>
         </div>
+        <Upload
+          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          listType="picture"
+          beforeUpload={() => false}
+        >
+          <Button icon={<UploadOutlined />}>Upload</Button>
+        </Upload>
       </form>
     </div>
   );
