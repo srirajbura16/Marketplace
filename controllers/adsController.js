@@ -19,12 +19,16 @@ exports.create_ad = [
     const newAd = new Ad({
       title: req.body.title,
       description: req.body.description,
+      price: req.body.price,
       condition: req.body.condition,
     });
 
-    newAd.save().then((ad) => {
-      res.json(ad);
-    });
+    newAd
+      .save()
+      .then((ad) => {
+        res.json(ad);
+      })
+      .catch((err) => console.log(err));
   },
 ];
 
