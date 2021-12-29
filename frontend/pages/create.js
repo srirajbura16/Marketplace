@@ -19,9 +19,10 @@ export default function create() {
     watch,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
 
-  console.log(errors);
-  async function onSubmit({ title, description, price, condition }) {
+  async function onSubmit(data) {
+    const { title, description, price, condition } = data;
     const res = await fetch('http://localhost:5000/api/ads', {
       method: 'POST',
       headers: {
@@ -29,11 +30,9 @@ export default function create() {
       },
       body: JSON.stringify({ title, description, price, condition }),
     });
-    const data = res.json();
-    console.log(data);
-    // console.log(res);
+    const ad = await res.json();
 
-    // await router.push('/ads/');
+    // await router.push(`/ads/${ad._id}`);
   }
 
   return (
