@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'antd/dist/antd.css';
 
 import { SessionProvider } from 'next-auth/react';
 

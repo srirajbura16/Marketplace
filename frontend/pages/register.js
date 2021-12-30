@@ -1,8 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useForm } from 'react-hook-form';
 
 export default function Register() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

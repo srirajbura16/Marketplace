@@ -22,6 +22,10 @@ const AdSchema = new Schema(
       required: true,
       enum: ['New', 'Used - Like New', 'Used - Good', 'Used - Fair'],
     },
+    image_url: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

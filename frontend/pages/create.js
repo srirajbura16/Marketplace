@@ -9,14 +9,11 @@
 //   Submit
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import { Upload, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 
 export default function create() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const router = useRouter();
@@ -99,47 +96,30 @@ export default function create() {
           </div>
         </div>
 
-        <Upload
+        {/* <Upload
           action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
           listType="picture"
           beforeUpload={() => false}
         >
           <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload>
+        </Upload> */}
 
-        {/* <input
-          type="text"
-          placeholder="Title"
-          {...register('Title', { min: 4 })}
-        />
-        <textarea {...register('Description', {})} />
-        <input type="number" placeholder="Price" {...register('Price', {})} />
-        <select {...register}>
-          <option value="New">New</option>
-          <option value=" Used - Like New"> Used - Like New</option>
-          <option value=" Used - Good"> Used - Good</option>
-          <option value=" Used - Fair"> Used - Fair</option>
-        </select> */}
+        <div className="form-group">
+          <div class="form-group ">
+            <label for="img">Image URL</label>
+            <input
+              {...register('img', { required: true })}
+              placeholder="https://example.com"
+              type="url"
+              class="form-control"
+              id="img"
+            />
+          </div>
+        </div>
         <button type="submit" class="btn btn-primary">
           Submit
         </button>
       </form>
     </div>
   );
-}
-
-{
-  /* <input
-          type="text"
-          placeholder="Title"
-          {...register('Title', { min: 4 })}
-        />
-        <textarea {...register('Description', {})} />
-        <input type="number" placeholder="Price" {...register('Price', {})} />
-        <select {...register}>
-          <option value="New">New</option>
-          <option value=" Used - Like New"> Used - Like New</option>
-          <option value=" Used - Good"> Used - Good</option>
-          <option value=" Used - Fair"> Used - Fair</option>
-        </select> */
 }
