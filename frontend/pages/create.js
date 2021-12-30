@@ -1,12 +1,4 @@
 //check auth
-//reroute to login page in not authenticated
-// Form
-//   Title
-//   Description
-//   Price
-//   Condition
-//   Upload Picture
-//   Submit
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -19,15 +11,16 @@ export default function create() {
   const router = useRouter();
 
   async function onSubmit(data) {
-    const { title, description, price, condition } = data;
+    const { title, description, price, condition, image_url } = data;
     const res = await fetch('http://localhost:5000/api/ads', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ title, description, price, condition }),
+      body: JSON.stringify({ title, description, price, condition, image_url }),
     });
     const ad = await res.json();
+    console.log(data);
 
     // await router.push(`/ads/${ad._id}`);
   }
@@ -52,7 +45,7 @@ export default function create() {
             placeholder="Title"
           />
         </div>
-        <p>{errors.title?.message}</p>
+        {errors.title ? <p>{errors.title?.message}</p> : ''}
         {/* description */}
         <div className="form-group">
           <label for="exampleFormControlTextarea1">Description</label>
@@ -63,7 +56,7 @@ export default function create() {
             rows="3"
           ></textarea>
         </div>
-        {/* price and condition */}
+        {/* price */}
         <div className="form-group">
           <div class="form-group ">
             <label for="inputEmail4">$ Price</label>
@@ -75,7 +68,7 @@ export default function create() {
             />
           </div>
         </div>
-
+        {/* Condition */}
         <div className="form-group">
           <div class="form-group ">
             <label for="inputState">Condition</label>
@@ -96,27 +89,21 @@ export default function create() {
           </div>
         </div>
 
-        {/* <Upload
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-          listType="picture"
-          beforeUpload={() => false}
-        >
-          <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload> */}
-
+        {/* Image url */}
         <div className="form-group">
-          <div class="form-group ">
+          <div className="form-group ">
             <label for="img">Image URL</label>
             <input
-              {...register('img', { required: true })}
+              {...register('image_url', { required: true })}
               placeholder="https://example.com"
               type="url"
-              class="form-control"
+              className="form-control"
               id="img"
             />
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">
+
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>

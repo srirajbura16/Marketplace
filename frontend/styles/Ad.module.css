@@ -1,0 +1,14 @@
+.ad {
+  padding: 1rem;
+}
+
+.image {
+  height: 300px;
+  width: 300px;
+  background-color: darkorange;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+}

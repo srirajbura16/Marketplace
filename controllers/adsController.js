@@ -16,11 +16,13 @@ exports.create_ad = [
   // Extract error,
   // Create Ad
   (req, res, next) => {
+    const { title, description, price, condition, image_url } = req.body;
     const newAd = new Ad({
-      title: req.body.title,
-      description: req.body.description,
-      price: req.body.price,
-      condition: req.body.condition,
+      title,
+      description,
+      price,
+      condition,
+      image_url,
     });
 
     newAd
