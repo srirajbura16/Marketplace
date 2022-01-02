@@ -18,7 +18,7 @@ export default function Ads({ ads }) {
                 height={300}
               />
             </div>
-            <Link href={`/ads/${_id}`}>
+            <Link href={`/posts/${_id}`}>
               <a>
                 <div className={styles.title}>{title}</div>
               </a>

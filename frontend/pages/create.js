@@ -1,6 +1,7 @@
 //check auth
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
+import { useSession, getSession, signIn, signOut } from 'next-auth/react';
 
 export default function create() {
   const {
@@ -109,4 +110,21 @@ export default function create() {
       </form>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/api/auth/signin',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
 }
