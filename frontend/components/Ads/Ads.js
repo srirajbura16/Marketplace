@@ -23,7 +23,7 @@ export default function Ads({ ads }) {
                 <div className={styles.title}>{title}</div>
               </a>
             </Link>
-            <div className={styles.price}>$ {price}</div>
+            <div className="price">$ {price}</div>
             <div className={styles.condition}>{condition}</div>
           </div>
           // <div className={styles.ad}>
