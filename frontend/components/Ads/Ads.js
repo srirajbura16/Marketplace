@@ -18,28 +18,14 @@ export default function Ads({ ads }) {
                 height={300}
               />
             </div>
+            <div className="price">$ {price}</div>
             <Link href={`/posts/${_id}`}>
               <a>
                 <div className={styles.title}>{title}</div>
               </a>
             </Link>
-            <div className="price">$ {price}</div>
             <div className={styles.condition}>{condition}</div>
           </div>
-          // <div className={styles.ad}>
-          //   <div className={styles.ad_image}>
-          //     <img
-          //       src={image_url}
-          //       className={styles.img}
-          //       alt="ad picture"
-          //       width={400}
-          //       height={300}
-          //     />
-          //   </div>
-          //   <div className={styles.title}>{title}</div>
-          //   <div className={styles.price}>$ {price}</div>
-          //   <div className={styles.condition}>{condition}</div>
-          // </div>
         );
       })}
     </div>
