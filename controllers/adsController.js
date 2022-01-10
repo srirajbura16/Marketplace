@@ -16,13 +16,14 @@ exports.create_ad = [
   // Extract error,
   // Create Ad
   (req, res, next) => {
-    const { title, description, price, condition, image_url } = req.body;
+    const { title, description, price, condition, image_url, user } = req.body;
     const newAd = new Ad({
       title,
       description,
       price,
       condition,
       image_url,
+      user,
     });
 
     newAd
@@ -36,11 +37,13 @@ exports.create_ad = [
 
 exports.get_ad = (req, res, next) => {
   const id = req.params.id;
-  Ad.findById(id).exec((err, ad) => {
-    if (err) {
-      next(err);
-    }
+  Ad.findById(id)
+    // .populate('user')
+    .exec((err, ad) => {
+      if (err) {
+        next(err);
+      }
 
-    res.json(ad);
-  });
+      res.json(ad);
+    });
 };

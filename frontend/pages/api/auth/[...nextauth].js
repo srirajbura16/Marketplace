@@ -33,6 +33,19 @@ const options = {
   jwt: {
     secret: process.env.JWT_SECRET,
   },
+  callbacks: {
+    async jwt({ token, user }) {
+      // Persist the OAuth access_token to the token right after signin
+      if (user) {
+        token.user = user;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
+  },
 };
 
 export default NextAuth(options);

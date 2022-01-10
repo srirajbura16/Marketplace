@@ -1,8 +1,11 @@
 import styles from '../../styles/AdDetails.module.css';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function AdDetails({ data: ad }) {
-  const { title, description, price, condition, image_url } = ad;
+  console.log(ad);
+  const { title, description, price, condition, image_url, user } = ad;
+  // const { username, email, _id } = user;
   return (
     <div className="container">
       <Head>
@@ -22,13 +25,22 @@ export default function AdDetails({ data: ad }) {
           <div className={styles.condition}>{condition}</div>
         </div>
         <hr />
-        <div className={styles.description}>{description}</div>
+        <div className={styles.description}>
+          <h3>Description</h3>
+          {description}
+        </div>
       </div>
       <div className={styles.user}>
         {/* {link to profile} */}
         {/* <div>{username}</div>
         <div>{email}</div> */}
-        <div>John Doe</div>
+        {/* <Link to={`/users/${_id}`}> */}
+        <a>
+          {/* <div>{username}</div> */}
+          <div>John Doe</div>
+        </a>
+        {/* </Link> */}
+        {/* <div>{email}</div> */}
         <div>john.doe@ttt.com</div>
         <button>Chat</button>
       </div>
@@ -38,7 +50,6 @@ export default function AdDetails({ data: ad }) {
 
 export async function getServerSideProps(context) {
   const { id } = context.params;
-  console.log(id);
   const res = await fetch(`http://localhost:5000/api/ads/${id}`);
   const data = await res.json();
 

@@ -10,15 +10,24 @@ export default function create() {
     formState: { errors },
   } = useForm();
   const router = useRouter();
+  const { data: session } = useSession();
 
   async function onSubmit(data) {
     const { title, description, price, condition, image_url } = data;
+    const { _id } = session.user;
     const res = await fetch('http://localhost:5000/api/ads', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ title, description, price, condition, image_url }),
+      body: JSON.stringify({
+        title,
+        description,
+        price,
+        condition,
+        image_url,
+        user: _id,
+      }),
     });
     const ad = await res.json();
     console.log(data);
