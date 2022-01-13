@@ -16,14 +16,14 @@ body {
   color: var(--background-color);
 }
 
-.container {
+/* .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   max-width: 800px;
-}
+} */
 
 a {
   /* color: inherit; */

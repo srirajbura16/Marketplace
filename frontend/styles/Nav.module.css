@@ -1,6 +1,11 @@
+.container {
+  border-bottom: 1px black solid;
+}
 .nav {
+  margin: auto 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   list-style-type: none;
 }
@@ -8,7 +13,7 @@
 .nav .ul {
   padding: 0;
   margin: 0;
-  min-width: 25rem;
+  /* min-width: 25rem; */
   display: flex;
   justify-content: space-around;
   align-items: center;

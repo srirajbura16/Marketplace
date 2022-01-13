@@ -16,7 +16,7 @@ export default function Home({ data: ads }) {
       {/* <Nav /> */}
 
       <main className={styles.main}>
-        <h1>Listings</h1>
+        {/* <h1>Listings</h1> */}
         <Ads ads={ads} />
       </main>
     </div>

@@ -16,20 +16,24 @@ export default function AdDetails({ data: ad }) {
       <div className={styles.ad}>
         <h1>{title}</h1>
         <hr />
-        <div className={styles.ad_image}>
-          <img src={image_url} alt="ad image" />
-        </div>
-
-        <div>
-          <div className="price">$ {price}</div>
-          <div className={styles.condition}>{condition}</div>
-        </div>
-        <hr />
-        <div className={styles.description}>
-          <h3>Description</h3>
-          {description}
+        <div className={styles.flex}>
+          <div className={styles.ad_image}>
+            <img src={image_url} alt="ad image" />
+          </div>
+          <div className={styles.ad_info}>
+            <div>
+              <div className="price">$ {price}</div>
+              <div className={styles.condition}>{condition}</div>
+            </div>
+            <hr />
+            <div className={styles.description}>
+              <h3>Description</h3>
+              {description}
+            </div>
+          </div>
         </div>
       </div>
+
       <div className={styles.user}>
         {/* {link to profile} */}
         {/* <div>{username}</div>

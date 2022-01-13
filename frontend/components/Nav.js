@@ -6,7 +6,7 @@ export default function Nav() {
   const { data: session } = useSession();
   console.log(session);
   return (
-    <div>
+    <div className={styles.container}>
       <nav className={styles.nav}>
         <h1>Marketplace</h1>
         {session ? (
@@ -20,13 +20,12 @@ export default function Nav() {
             </li>
           </ul>
         ) : (
-          <div>
-            Not signed in <br />
+          <div className={styles.ul}>
             <button onClick={() => signIn()}>Sign in</button>
           </div>
         )}
       </nav>
-      <hr />
+      {/* <hr /> */}
     </div>
   );
 }
