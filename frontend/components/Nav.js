@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import styles from '../styles/Nav.module.css';
+import Link from 'next/link';
 
 export default function Nav() {
   const { data: session } = useSession();
@@ -8,13 +9,17 @@ export default function Nav() {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <h1>Marketplace</h1>
+        <Link href="/">
+          <a className={styles.logo}>
+            <h1>Marketplace</h1>
+          </a>
+        </Link>
         {session ? (
           <ul className={styles.ul}>
             <li className={styles.username}>
               {session.user.username} <br />
             </li>
-            <li>My Chats</li>
+
             <li>
               <button onClick={() => signOut()}>Sign out</button>
             </li>

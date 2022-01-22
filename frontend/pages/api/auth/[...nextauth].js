@@ -4,10 +4,10 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 const options = {
   providers: [
     CredentialsProvider({
-      name: 'Custom Provider',
+      name: 'Username',
       credentials: {
         username: { label: 'Username', type: 'text', placeholder: 'jsmith' },
-        password: { label: 'Password', type: 'text' },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
         const url = 'http://localhost:5000/api/auth/login';

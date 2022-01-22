@@ -10,10 +10,14 @@
   list-style-type: none;
 }
 
+.logo {
+  text-decoration: none;
+}
+
 .nav .ul {
   padding: 0;
   margin: 0;
-  /* min-width: 25rem; */
+  min-width: 25rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
