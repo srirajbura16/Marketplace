@@ -31,6 +31,12 @@ export default function Nav() {
         ) : (
           <div className={styles.ul}>
             <button onClick={() => signIn()}>Sign in</button>
+            <button>
+              {' '}
+              <Link href="/register">
+                <a className={styles.register}>Register</a>
+              </Link>{' '}
+            </button>
           </div>
         )}
       </nav>
