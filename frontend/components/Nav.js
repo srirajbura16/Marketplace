@@ -20,6 +20,10 @@ export default function Nav() {
               {session.user.username} <br />
             </li>
 
+            <li className={styles.username}>
+              <Link href="/create">Post an Ad</Link>{' '}
+            </li>
+
             <li>
               <button onClick={() => signOut()}>Sign out</button>
             </li>
