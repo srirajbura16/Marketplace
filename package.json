@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/srirajbura16/Marketplace#readme",
   "dependencies": {
-    "async": "^3.2.2",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.4.0",
     "cookie-parser": "^1.4.6",

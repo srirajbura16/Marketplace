@@ -3,9 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function AdDetails({ data: ad }) {
-  console.log(ad);
   const { title, description, price, condition, image_url, user } = ad;
-  // const { username, email, _id } = user;
+  const { username, email } = user;
   return (
     <div className="container">
       <Head>
@@ -35,17 +34,8 @@ export default function AdDetails({ data: ad }) {
         <h1 className="contact">Contact</h1>
         <hr />
         <div className={styles.user}>
-          {/* {link to profile} */}
-          {/* <div>{username}</div>
-        <div>{email}</div> */}
-          {/* <Link to={`/users/${_id}`}> */}
-          <a>
-            {/* <div>{username}</div> */}
-            <div>John Doe</div>
-          </a>
-          {/* </Link> */}
-          {/* <div>{email}</div> */}
-          <div>john.doe@ttt.com</div>
+          <div>{username}</div>
+          <div>{email}</div>
         </div>
       </div>
     </div>

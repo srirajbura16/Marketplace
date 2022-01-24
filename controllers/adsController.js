@@ -37,8 +37,9 @@ exports.create_ad = [
 
 exports.get_ad = (req, res, next) => {
   const id = req.params.id;
+
   Ad.findById(id)
-    // .populate('user')
+    .populate('user', '-password')
     .exec((err, ad) => {
       if (err) {
         next(err);

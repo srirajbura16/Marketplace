@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export default function Nav() {
   const { data: session } = useSession();
-  console.log(session);
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
