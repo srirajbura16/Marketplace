@@ -25,28 +25,28 @@ export default function AdDetails({ data: ad }) {
               <div className="price">$ {price}</div>
               <div className={styles.condition}>{condition}</div>
             </div>
-            <hr />
             <div className={styles.description}>
-              <h3>Description</h3>
+              <h1>Description</h1>
+              <hr />
               {description}
             </div>
           </div>
         </div>
-      </div>
-
-      <div className={styles.user}>
-        {/* {link to profile} */}
-        {/* <div>{username}</div>
+        <h1 className="contact">Contact</h1>
+        <hr />
+        <div className={styles.user}>
+          {/* {link to profile} */}
+          {/* <div>{username}</div>
         <div>{email}</div> */}
-        {/* <Link to={`/users/${_id}`}> */}
-        <a>
-          {/* <div>{username}</div> */}
-          <div>John Doe</div>
-        </a>
-        {/* </Link> */}
-        {/* <div>{email}</div> */}
-        <div>john.doe@ttt.com</div>
-        <button>Chat</button>
+          {/* <Link to={`/users/${_id}`}> */}
+          <a>
+            {/* <div>{username}</div> */}
+            <div>John Doe</div>
+          </a>
+          {/* </Link> */}
+          {/* <div>{email}</div> */}
+          <div>john.doe@ttt.com</div>
+        </div>
       </div>
     </div>
   );
