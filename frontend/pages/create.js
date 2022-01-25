@@ -39,7 +39,7 @@ export default function create() {
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* title */}
         <div className="form-group">
-          <label for="exampleFormControlInput1">Title</label>
+          <label htmlFor="exampleFormControlInput1">Title</label>
           <input
             {...register('title', {
               required: 'Required',
@@ -57,7 +57,7 @@ export default function create() {
         {errors.title ? <p>{errors.title?.message}</p> : ''}
         {/* description */}
         <div className="form-group">
-          <label for="exampleFormControlTextarea1">Description</label>
+          <label htmlFor="exampleFormControlTextarea1">Description</label>
           <textarea
             {...register('description', { required: true })}
             class="form-control"
@@ -68,7 +68,7 @@ export default function create() {
         {/* price */}
         <div className="form-group">
           <div class="form-group ">
-            <label for="inputEmail4">$ Price</label>
+            <label htmlFor="inputEmail4">$ Price</label>
             <input
               {...register('price', { required: true })}
               type="number"
@@ -80,7 +80,7 @@ export default function create() {
         {/* Condition */}
         <div className="form-group">
           <div class="form-group ">
-            <label for="inputState">Condition</label>
+            <label htmlFor="inputState">Condition</label>
             <select
               {...register('condition', { required: true })}
               selected
@@ -101,7 +101,7 @@ export default function create() {
         {/* Image url */}
         <div className="form-group">
           <div className="form-group ">
-            <label for="img">Image URL</label>
+            <label htmlFor="img">Image URL</label>
             <input
               {...register('image_url', { required: true })}
               placeholder="https://example.com"

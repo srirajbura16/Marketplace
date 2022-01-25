@@ -5,10 +5,9 @@ export default function Ads({ ads }) {
   return (
     <div className={styles.ads}>
       {ads.map((ad) => {
-        // return <Ad Ad={ad} key={ad._id} />;
         const { title, price, condition, image_url, _id } = ad;
         return (
-          <div className={styles.ad}>
+          <div className={styles.ad} key={_id}>
             <div className={styles.ad_image}>
               <img
                 src={image_url}

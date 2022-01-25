@@ -5,6 +5,8 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 5000;
 const passport = require('passport');
+const compression = require('compression');
+const helmet = require('helmet');
 
 //Config
 require('./config/db');
@@ -19,6 +21,8 @@ app.use(
 );
 app.use(passport.initialize());
 require('./config/passport')(passport);
+app.use(compression());
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

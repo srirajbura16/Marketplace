@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "15.5.1"
+  },
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
@@ -23,12 +26,14 @@
   "homepage": "https://github.com/srirajbura16/Marketplace#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "concurrently": "^6.4.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-validator": "^6.13.0",
+    "helmet": "^5.0.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
     "passport": "^0.5.0",
