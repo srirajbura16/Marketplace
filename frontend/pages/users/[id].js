@@ -1,4 +1,3 @@
-//list user info, listings
 import React from 'react';
 import styles from '../../styles/User.module.css';
 import Layout from '../../components/Layout';
