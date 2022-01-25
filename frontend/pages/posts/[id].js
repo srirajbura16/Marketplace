@@ -17,7 +17,7 @@ export default function AdDetails({ data: ad }) {
         <hr />
         <div className={styles.flex}>
           <div className={styles.ad_image}>
-            {/* <img src={image_url} alt="ad image" /> */}
+            <img src={image_url} alt="ad image" />
           </div>
           <div className={styles.ad_info}>
             <div>
