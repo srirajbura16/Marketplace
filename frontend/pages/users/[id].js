@@ -17,7 +17,7 @@ export default function User({ data: user }) {
             ? ads.map((ad) => {
                 const { title, price, condition, _id, image_url } = ad;
                 return (
-                  <Link to={`/ads/${_id}`}>
+                  <Link href={`/ads/${_id}`} key={_id}>
                     <a>
                       <div>
                         <div>{title}</div>

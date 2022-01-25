@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useSession, getSession, signIn, signOut } from 'next-auth/react';
 
-export default function create() {
+export default function Create() {
   const {
     register,
     handleSubmit,
@@ -60,32 +60,32 @@ export default function create() {
           <label htmlFor="exampleFormControlTextarea1">Description</label>
           <textarea
             {...register('description', { required: true })}
-            class="form-control"
+            className="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
         </div>
         {/* price */}
         <div className="form-group">
-          <div class="form-group ">
+          <div className="form-group ">
             <label htmlFor="inputEmail4">$ Price</label>
             <input
               {...register('price', { required: true })}
               type="number"
-              class="form-control"
+              className="form-control"
               id="inputEmail4"
             />
           </div>
         </div>
         {/* Condition */}
         <div className="form-group">
-          <div class="form-group ">
+          <div className="form-group ">
             <label htmlFor="inputState">Condition</label>
             <select
               {...register('condition', { required: true })}
               selected
               id="inputState"
-              class="form-control"
+              className="form-control"
             >
               <option selected disabled hidden>
                 Choose...
