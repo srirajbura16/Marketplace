@@ -9,13 +9,13 @@ export default function Ads({ ads }) {
         return (
           <div className={styles.ad} key={_id}>
             <div className={styles.ad_image}>
-              <img
+              {/* <img
                 src={image_url}
                 className={styles.img}
                 alt="ad picture"
                 width={400}
                 height={300}
-              />
+              /> */}
             </div>
             <div className="price">$ {price}</div>
             <Link href={`/posts/${_id}`}>
