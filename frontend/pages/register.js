@@ -16,7 +16,6 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
-  console.log(username, email, password);
 
   async function submitForm(e) {
     e.preventDefault();

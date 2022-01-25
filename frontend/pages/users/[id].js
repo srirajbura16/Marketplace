@@ -5,7 +5,6 @@ import Layout from '../../components/Layout';
 import Link from 'next/link';
 
 export default function User({ data: user }) {
-  console.log(user);
   const { username, email, ads } = user;
   return (
     <Layout headTitle={username}>

@@ -30,7 +30,6 @@ export default function create() {
       }),
     });
     const ad = await res.json();
-    console.log(data);
 
     await router.push(`/posts/${ad._id}`);
   }
