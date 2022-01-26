@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useSession, getSession, signIn, signOut } from 'next-auth/react';
-
+import apiURL from '../lib/apiURL';
 export default function Create() {
   const {
     register,
@@ -15,7 +15,7 @@ export default function Create() {
   async function onSubmit(data) {
     const { title, description, price, condition, image_url } = data;
     const { _id } = session.user;
-    const res = await fetch('http://localhost:5000/api/ads', {
+    const res = await fetch(`${apiURL}/api/ads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

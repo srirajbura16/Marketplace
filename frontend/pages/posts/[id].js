@@ -1,6 +1,7 @@
 import styles from '../../styles/AdDetails.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
+import apiURL from '../../lib/apiURL';
 
 export default function AdDetails({ data: ad }) {
   const { title, description, price, condition, image_url, user } = ad;
@@ -44,7 +45,7 @@ export default function AdDetails({ data: ad }) {
 
 export async function getServerSideProps(context) {
   const { id } = context.params;
-  const res = await fetch(`http://localhost:5000/api/ads/${id}`);
+  const res = await fetch(`${apiURL}/api/ads/${id}`);
   const data = await res.json();
 
   if (!data) {

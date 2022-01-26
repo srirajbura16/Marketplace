@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import Layout from '../components/Layout';
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
+import apiURL from '../lib/apiURL';
 
 export default function Register() {
   const {
@@ -19,7 +20,7 @@ export default function Register() {
 
   async function submitForm(e) {
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/api/auth/register', {
+    const res = await fetch(`${apiURL}/api/auth/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
