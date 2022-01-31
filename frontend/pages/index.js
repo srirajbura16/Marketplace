@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Ads from '../components/Ads/Ads';
-import apiURL from '../lib/apiURL';
+import API_URL from '../lib/API_URL';
 
 export default function Home({ data: ads }) {
   return (
@@ -21,7 +21,7 @@ export default function Home({ data: ads }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`${apiURL}/api/ads`);
+  const res = await fetch(`${API_URL}/api/ads`);
   const data = await res.json();
 
   if (!data) {

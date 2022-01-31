@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import apiURL from '../../../lib/apiURL';
+import API_URL from '../../../lib/API_URL';
 const options = {
   providers: [
     CredentialsProvider({
@@ -10,7 +10,7 @@ const options = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        const url = `${apiURL}/api/auth/login`;
+        const url = `${API_URL}/api/auth/login`;
         const res = await fetch(url, {
           method: 'POST',
           body: JSON.stringify(credentials),
