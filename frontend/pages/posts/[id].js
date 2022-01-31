@@ -1,7 +1,7 @@
 import styles from '../../styles/AdDetails.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
-import API_URL from '../lib/API_URL';
+import API_URL from '../../lib/API_URL';
 
 export default function AdDetails({ data: ad }) {
   const { title, description, price, condition, image_url, user } = ad;
