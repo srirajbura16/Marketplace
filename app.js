@@ -14,7 +14,7 @@ require('./config/db');
 //Middleware
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: ['https://marketplace07.vercel.app', 'http://localhost:3000'],
     credentials: true,
   })
 );
