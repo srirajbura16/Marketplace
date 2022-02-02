@@ -1,10 +1,22 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Ads from '../components/Ads/Ads';
 import API_URL from '../lib/API_URL';
+import { useEffect, useState } from 'react';
 
-export default function Home({ data: ads }) {
+export default function Home() {
+  const [message, setMessage] = useState('Loading...');
+  const [ads, setAds] = useState();
+  useEffect(async () => {
+    const res = await fetch(`${API_URL}/api/ads`);
+    const data = await res.json();
+
+    if (!data) {
+      setMessage('failed to fetch data');
+    }
+    setAds(data);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,23 +26,8 @@ export default function Home({ data: ads }) {
       </Head>
 
       <main className={styles.main}>
-        <Ads ads={ads} />
+        {ads ? <Ads ads={ads} /> : <h3 className="message">{message}</h3>}
       </main>
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-  const res = await fetch(`${API_URL}/api/ads`);
-  const data = await res.json();
-
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: { data },
-  };
 }

@@ -46,3 +46,7 @@ img {
   color: var(--price-color);
   font-size: 1.5rem;
 }
+
+.message {
+  text-align: center;
+}
