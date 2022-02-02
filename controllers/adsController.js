@@ -1,11 +1,13 @@
 const Ad = require('../models/Ad');
+const apicache = require('apicache');
+let cache = apicache.middleware;
 
 exports.get_ads = (req, res, next) => {
   Ad.find({}).exec((err, ads) => {
     if (err) {
       return next(err);
     }
-
+    req.apicacheGroup = req.params.ads;
     res.status(200).json(ads);
   });
 };
@@ -32,6 +34,8 @@ exports.create_ad = [
         res.json(ad);
       })
       .catch((err) => console.log(err));
+
+    apicache.clear(req.params.ads);
   },
 ];
 
