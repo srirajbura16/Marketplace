@@ -10,11 +10,13 @@ export default function Home() {
   useEffect(async () => {
     const res = await fetch(`${API_URL}/api/ads`);
     const data = await res.json();
+    console.log(data);
 
     if (!data) {
       setMessage('failed to fetch data');
+    } else {
+      setAds(data);
     }
-    setAds(data);
   }, []);
 
   return (
