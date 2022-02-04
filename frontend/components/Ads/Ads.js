@@ -3,7 +3,7 @@ import Link from 'next/link';
 import API_URL from '../../lib/API_URL';
 import { useState, useEffect } from 'react';
 
-export default function Ads({ data }) {
+export default function Ads() {
   const [message, setMessage] = useState('Loading...');
   const [ads, setAds] = useState();
   useEffect(async () => {
