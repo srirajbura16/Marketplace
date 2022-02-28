@@ -12,6 +12,8 @@
   height: 300px;
   width: 300px;
   background-color: darkorange;
+  background-size: cover;
+  background-position: center;
 }
 
 .title {

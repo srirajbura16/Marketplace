@@ -1,17 +1,17 @@
-import styles from '../../styles/Ads.module.css';
-import Link from 'next/link';
-import API_URL from '../../lib/API_URL';
-import { useState, useEffect } from 'react';
+import styles from "../../styles/Ads.module.css";
+import Link from "next/link";
+import API_URL from "../../lib/API_URL";
+import { useState, useEffect } from "react";
 
 export default function Ads() {
-  const [message, setMessage] = useState('Loading...');
+  const [message, setMessage] = useState("Loading...");
   const [ads, setAds] = useState();
   useEffect(async () => {
     const res = await fetch(`${API_URL}/api/ads`);
     const data = await res.json();
 
     if (!data) {
-      setMessage('failed to fetch data');
+      setMessage("failed to fetch data");
     } else {
       setAds(data);
     }
